@@ -6,16 +6,23 @@
 
 3. 切換到新建的 branch：git checkout week01
 
-4. 將新建的檔案提交給 git 控管：git add .
+4. 檔案修正後提交給 git 控管：git add .
 
-5. 檔案修改完成後新建一個版本：git commit -am "week01 done"
+5. 新建一個版本：git commit -m "week01 done"
 
-6. 確認版本控制沒有遺漏的部分：git status
+> 步驟 4 及 5 可合併指令（用原已有檔案修改的情況下）：git commit -am "week01 done"
+
+6. 可以隨時查詢版本控制狀態：git status
 
 7. 將新版本推上 GitHub：git push origin week01
 
 8. 到 GitHub 頁面提出 pull request 請求
 
 9. 在學習系統的作業列表頁面新增作業，並將 PR 網址附上。
+
+10. 待助教將 week01 merge 到 master 後，重新同步遠端的 master 到本地。
+    git pull origin master
+
+11. 再將本地的 week01 刪除：git branch -d week01
 
 
