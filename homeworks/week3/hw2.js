@@ -1,5 +1,6 @@
 /* eslint-disable indent */
 /* eslint-disable no-unused-vars */
+/* eslint-disable no-param-reassign */
 const readline = require('readline');
 const { connect } = require('http2');
 
@@ -16,26 +17,24 @@ rl.on('line', (line) => {
 function solve(input) {
     const tmp = lines[0].split(' ');
     function findDigits(n) {
-        let compareNum = n;
         let digitsCount = 0;
-        while (compareNum !== 0) {
-            compareNum = Math.floor(compareNum / 10);
+        while (n !== 0) {
+            n = Math.floor(n / 10);
             digitsCount += 1;
         }
         return digitsCount;
     }
     function checkNum(n) {
-        let compareNum = n;
+        const realNum = n;
         let addNum = 0;
-        while (checkNum !== 0) {
-            addNum += (compareNum % 10) ** findDigits(n);
-            compareNum = Math.floor(compareNum / 10);
+        while (n !== 0) {
+            addNum += (n % 10) ** findDigits(realNum);
+            n = Math.floor(n / 10);
         }
-        if (addNum === n) {
-            console.log(n);
+        if (addNum === realNum) {
+            console.log(realNum);
         }
     }
-
     for (let i = Number(tmp[0]); i <= Number(tmp[1]); i += 1) {
         checkNum(i);
     }
