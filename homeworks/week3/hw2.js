@@ -17,22 +17,23 @@ rl.on('line', (line) => {
 function solve(input) {
     const tmp = lines[0].split(' ');
     function findDigits(n) {
+        let oldNum = n;
         let digitsCount = 0;
-        while (n !== 0) {
-            n = Math.floor(n / 10);
+        while (oldNum !== 0) {
+            oldNum = Math.floor(oldNum / 10);
             digitsCount += 1;
         }
         return digitsCount;
     }
     function checkNum(n) {
-        const realNum = n;
+        let oldNum = n;
         let addNum = 0;
-        while (n !== 0) {
-            addNum += (n % 10) ** findDigits(realNum);
-            n = Math.floor(n / 10);
+        while (oldNum !== 0) {
+            addNum += (oldNum % 10) ** findDigits(n);
+            oldNum = Math.floor(oldNum / 10);
         }
-        if (addNum === realNum) {
-            console.log(realNum);
+        if (addNum === n) {
+            console.log(n);
         }
     }
     for (let i = Number(tmp[0]); i <= Number(tmp[1]); i += 1) {
