@@ -1,6 +1,6 @@
 /* eslint-disable indent */
 /* eslint-disable no-unused-vars */
-/* eslint-disable no-param-reassign */
+
 const readline = require('readline');
 const { connect } = require('http2');
 
