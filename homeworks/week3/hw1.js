@@ -1,7 +1,7 @@
 /* eslint-disable indent */
 /* eslint-disable no-unused-vars */
+
 const readline = require('readline');
-const { connect } = require('http2');
 
 const rl = readline.createInterface({
     input: process.stdin,
@@ -14,10 +14,8 @@ rl.on('line', (line) => {
 });
 
 function solve(input) {
-    let star = '';
-    for (let i = 0; i < lines[0]; i += 1) {
-        star += '*';
-        console.log(star);
+    for (let i = 1; i <= lines[0]; i += 1) {
+        console.log('*'.repeat(i));
     }
 }
 
