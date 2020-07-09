@@ -1,7 +1,6 @@
 /* eslint-disable indent */
 /* eslint-disable no-unused-vars */
 const readline = require('readline');
-const { connect } = require('http2');
 
 const rl = readline.createInterface({
     input: process.stdin,
