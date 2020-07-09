@@ -1,7 +1,7 @@
 /* eslint-disable indent */
 /* eslint-disable no-unused-vars */
+
 const readline = require('readline');
-const { connect } = require('http2');
 
 const rl = readline.createInterface({
     input: process.stdin,
@@ -14,15 +14,15 @@ rl.on('line', (line) => {
 });
 
 function solve(input) {
-    let newStr = '';
-    const tmp = lines[0].split('');
-    for (let i = tmp.length - 1; i >= 0; i -= 1) {
-        newStr += tmp[i];
-    } if (lines[0] === newStr) {
-        console.log('True');
-    } else {
-        console.log('False');
+    function reverse(n) {
+        let newStr = '';
+        const tmp = lines[0].split('');
+        for (let i = tmp.length - 1; i >= 0; i -= 1) {
+            newStr += tmp[i];
+        }
+        return newStr;
     }
+    console.log(reverse(lines[0]) === lines[0] ? 'True' : 'False');
 }
 
 rl.on('close', () => {
