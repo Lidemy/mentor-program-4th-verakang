@@ -1,8 +1,8 @@
 /* eslint-disable indent */
 /* eslint-disable no-unused-vars */
-/* global BigInt */
+/* eslint-disable no-param-reassign */
+
 const readline = require('readline');
-const { connect } = require('http2');
 
 const rl = readline.createInterface({
     input: process.stdin,
@@ -15,27 +15,28 @@ rl.on('line', (line) => {
 });
 
 function solve(input) {
+    function compare(a, b, c) {
+        if (a === b) return 'DRAW';
+        if (c === -1) {
+            const backupNum = a;
+            a = b;
+            b = backupNum;
+        }
+        const aLength = a.length;
+        const bLength = b.length;
+
+        if (aLength !== bLength) {
+            return aLength > bLength ? 'A' : 'B';
+        }
+        return a > b ? 'A' : 'B';
+    }
+
     for (let i = 1; i < lines.length; i += 1) {
-        const checkNum = lines[i].split(' ');
-        const a = BigInt(checkNum[0]);
-        const b = BigInt(checkNum[1]);
-        if (a === b) {
-            console.log('DRAW');
-        }
-        if (Number(checkNum[2]) === 1) {
-            if (a > b) {
-                console.log('A');
-            } else if (a < b) {
-                console.log('B');
-            }
-        }
-        if (Number(checkNum[2]) === -1) {
-            if (a > b) {
-                console.log('B');
-            } else if (a < b) {
-                console.log('A');
-            }
-        }
+        const tmp = lines[i].split(' ');
+        const a = tmp[0];
+        const b = tmp[1];
+        const c = tmp[2];
+        console.log(compare(a, b, c));
     }
 }
 
