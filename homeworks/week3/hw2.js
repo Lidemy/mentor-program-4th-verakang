@@ -2,7 +2,6 @@
 /* eslint-disable no-unused-vars */
 
 const readline = require('readline');
-const { connect } = require('http2');
 
 const rl = readline.createInterface({
     input: process.stdin,
@@ -25,7 +24,7 @@ function solve(input) {
         }
         return digitsCount;
     }
-    function checkNum(n) {
+    function isNarcissistic(n) {
         let oldNum = n;
         let addNum = 0;
         while (oldNum !== 0) {
@@ -33,11 +32,15 @@ function solve(input) {
             oldNum = Math.floor(oldNum / 10);
         }
         if (addNum === n) {
-            console.log(n);
+            return true;
         }
+        return false;
     }
+
     for (let i = Number(tmp[0]); i <= Number(tmp[1]); i += 1) {
-        checkNum(i);
+        if (isNarcissistic(i)) {
+            console.log(i);
+        }
     }
 }
 
