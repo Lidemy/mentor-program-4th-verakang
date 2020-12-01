@@ -10,37 +10,75 @@
 
 <body>
     <div class="wrap">
-        <h1>新拖延運動報名表單</h1>
-        <p>活動日期：2020/12/10 ~ 2020/12/11</p>
-        <p>活動地點：台北市大安區新生南路二段1號</p>
-        <p class="star">* 必填</p>
-        <form>
-            <p class="item">暱稱<span class="star"> *</span></p>
-            <input type="text" placeholder="您的暱稱" class="text">
-            <p class="item">電子郵件<span class="star"> *</span></p>
-            <input type="email" placeholder="您的電子郵件" class="text">
-            <p class="item">手機號碼<span class="star"> *</span></p>
-            <input type="number" placeholder="您的手機號碼" class="text">
-            <p class="item">報名類型<span class="star"> *</span></p>
-            <input type="radio" id="ans01" name="type">
-            <label for="ans01" class="radio">躺在床上用想像力實作</label>
-            </br>
-            <input type="radio" id="ans02" name="type">
-            <label for="ans02" class="radio">趴在地上滑手機找現成的</label>
-            <p class="item">怎麼知道這個活動的？<span class="star"> *</span></p>
-            <input type="text" placeholder="您的回答" class="text">
-            <p class="item">其他</p>
-            <p>對活動的一些建議</p>
-            <input type="text" placeholder="您的回答" class="text">
-            </br>
+        <form class="apply-form">
+            <h1 class="apply-form__title">新拖延運動報名表單</h1>
+            <p class="apply-form__desc">
+                活動日期：2020/12/10 ~ 2020/12/11<br>
+                活動地點：台北市大安區新生南路二段1號</p>
+            <p class="apply-form__notice">* 必填</p>
+
+            <div class="input-block">
+                <div class="input-block__title required">
+                    暱稱
+                </div>
+                <div class="input-block__input">
+                    <input type="text" placeholder="您的暱稱" class="text">
+                </div>
+            </div>
+            <div class="input-block">
+                <div class="input-block__title required">
+                    電子郵件
+                </div>
+                <div class="input-block__input">
+                    <input type="email" placeholder="您的電子郵件" class="text">
+                </div>
+            </div>
+            <div class="input-block">
+                <div class="input-block__title required">
+                    手機號碼
+                </div>
+                <div class="input-block__input">
+                    <input type="number" placeholder="您的手機號碼" class="text">
+                </div>
+            </div>
+            <div class="input-block">
+                <div class="input-block__title required">
+                    報名類型
+                </div>
+                <div class="input-block__input">
+                    <label>
+                        <input type="radio" name="type"> 躺在床上用想像力實作
+                    </label>
+                    </br>
+                    <label>
+                        <input type="radio" name="type"> 趴在地上滑手機找現成的
+                    </label>
+                </div>
+            </div>
+            <div class="input-block">
+                <div class="input-block__title required">
+                    怎麼知道這個活動的？
+                </div>
+                <div class="input-block__input">
+                    <input type="text" placeholder="您的回答" class="text">
+                </div>
+            </div>
+            <div class="input-block">
+                <div class="input-block__title">
+                    其他
+                </div>
+                <p class="input-block__desc">對活動的一些建議</p>
+                <div class="input-block__input">
+                    <input type="text" placeholder="您的回答" class="text">
+                </div>
+            </div>
             <input type="submit" class="submit">
-            <p>請勿透過表單送出您的密碼。</p>
+            <p class="submit__notice">請勿透過表單送出您的密碼。</p>
         </form>
-
-
-
     </div>
-
+    <footer>
+        <p>© 2020 © Copyright. All rights Reserved.</p>
+    </footer>
 </body>
 
 </html>
