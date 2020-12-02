@@ -10,7 +10,7 @@ body {
     max-width: 645px;
     margin: 100px auto;
     border-top: 6px solid #fad312;
-    padding: 40px 0px 35px 42px;
+    padding: 30px 40px;
 }
 
 .apply-form__title {
@@ -106,6 +106,6 @@ footer p{
         margin: 50px auto;
     }
     .text{
-        width: 320px;
+        width: 80%;
     }
 }
